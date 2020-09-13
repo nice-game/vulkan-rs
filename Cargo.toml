@@ -1,0 +1,16 @@
+[package]
+name = "vulkan"
+version = "0.1.0"
+authors = ["Jamie VanderBoon <jamiev.integritymedia.group>"]
+edition = "2018"
+
+[dependencies]
+ash = "0.31.0"
+atomic = "0.4.5"
+crossbeam = "0.7.3"
+log = "0.4.8"
+nalgebra = "0.21.0"
+raw-window-handle = "0.3.3"
+thread_local = "1.0.1"
+typenum = "1.12.0"
+vk-mem = "0.2.2"
