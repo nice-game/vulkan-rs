@@ -34,15 +34,11 @@ impl Instance {
 		exts.push(b"VK_KHR_win32_surface\0".as_ptr() as _);
 		#[cfg(unix)]
 		exts.push(b"VK_KHR_xlib_surface\0".as_ptr() as _);
-		#[cfg(debug_assertions)]
-		exts.push(b"VK_EXT_debug_utils\0".as_ptr() as _);
 
 		#[allow(unused_mut)]
 		let mut layers_pref = HashSet::new();
-		#[cfg(debug_assertions)]
-		layers_pref.insert(CStr::from_bytes_with_nul(b"VK_LAYER_LUNARG_standard_validation\0").unwrap());
-		#[cfg(debug_assertions)]
-		layers_pref.insert(CStr::from_bytes_with_nul(b"VK_LAYER_LUNARG_monitor\0").unwrap());
+		// #[cfg(debug_assertions)]
+		// layers_pref.insert(CStr::from_bytes_with_nul(b"VK_LAYER_LUNARG_monitor\0").unwrap());
 		let layers = vulkan.vk.enumerate_instance_layer_properties().unwrap();
 		let layers = layers
 			.iter()
